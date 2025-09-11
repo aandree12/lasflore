@@ -60,7 +60,8 @@
                             1269<span class="price">₽</span>
                         </p>
                         <p class="first-bouqet-desc">
-                            Lorem ipsum dolor sit amet,<br> consectetur adipiscing elit.
+                            Весенний букет <br> 
+                            для Ваших мам
                         </p>
                     </div>
                     <img class="cart" src="img/cart.svg" alt="">
@@ -75,7 +76,8 @@
                             999<span class="price">₽</span>
                         </p>
                         <p class="second-bouqet-desc">
-                            Lorem ipsum dolor sit amet,<br> consectetur adipiscing elit.
+                            Милый и маленький букет <br> 
+                            для ваших подруг
                         </p>
                     </div>
                     <img src="img/cart.svg" alt="" class="cart">
@@ -90,7 +92,8 @@
                             1499<span class="price">₽</span>
                         </p>
                         <p class="third-bouqet-desc">
-                            Lorem ipsum dolor sit amet,<br> consectetur adipiscing elit.
+                            Уютный букет <br> 
+                            чтобы принести домой жене
                         </p>
                     </div>
                     <img src="img/cart.svg" alt="" class="cart">
@@ -109,16 +112,12 @@
             </div>
             <div class="about-info">
                 <p class="about-text">
-                    Lorem ipsum dolor sit amet,<br>
-                    consectetur adipiscing elit. Consectetur<br>
-                    orci, convallis et lacus. Ullamcorper sit<br>
-                    massa ultricies aliquet nibh amet<br>
-                    volutpat lacinia in. Erat feugiat<br>
-                    tincidunt sed malesuada vivamus<br>
-                    faucibus. Sit magna hendrerit aliquet<br>
-                    eget nec id sagittis ultrices adipiscing.
+                    Мы создаем изысканные букеты, <br>
+                     которые говорят о ваших чувствах <br>
+                      громче слов. Дарите эмоции с доставкой <br>
+                       в любой уголок города.
                 </p>
-                <button class="more-btn d-block mx-auto">Узнать больше</button>
+                <button class="more-btn d-block mx-auto" data-bs-toggle="modal" data-bs-target="#moreModal">Узнать больше</button>
             </div>
         </div>
     </div>
@@ -134,9 +133,9 @@
                 <img class="d-block mx-auto" src="img/first-contact.png" alt="">
                 <p class="first-contact-text">Где мы находимся?</p>
                 <p class="first-contact-info">
-                    Lorem ipsum dolor<br>
-                    sit amet, consectetur<br>
-                    adipiscing elit.
+                    м. Первомайская<br>
+                    11-я парковая д. 36<br>
+                    общага
                 </p>
             </div>
 
@@ -144,9 +143,8 @@
                 <img src="img/second-contact.png" alt="" class="d-block mx-auto">
                 <p class="second-contact-text">Как с нами связаться?</p>
                 <p class="second-contact-info">
-                    Lorem ipsum dolor<br>
-                    sit amet, consectetur<br>
-                    adipiscing elit.
+                    позвонитьпо<br>
+                    номеру телефону
                 </p>
             </div>
 
@@ -154,9 +152,9 @@
                 <img src="img/third-contact.png" alt="" class="d-block mx-auto">
                 <p class="third-contact-text">Когда мы работаем?</p>
                 <p class="third-contact-info">
-                    Lorem ipsum dolor<br>
-                    sit amet, consectetur<br>
-                    adipiscing elit.
+                    Каждый день <br>
+                    с 10 утра <br>
+                    до 10 вечера.
                 </p>
             </div>
         </div>
@@ -166,7 +164,47 @@
 
     <script>
         AOS.init();
-      </script>
+    </script>
+
+
+    <div class="modal fade" id="moreModal" tabindex="-1" aria-labelledby="moreModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="moreModalLabel">Свяжитесь с нами</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            <div class="modal-body">
+                <p>LasFlore - это современная флористическая мастерская, где каждый букет создается с любовью и вниманием к деталям. Мы используем только свежие цветы от проверенных поставщиков и создаем уникальные композиции для ваших особенных моментов.</p>
+                
+                <form>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="ваш@email.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Телефон</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="+7 (000) 000-00-00">
+                    </div>
+                    <div class="mb-3">
+                        <label for="selection" class="form-label">Тип букета</label>
+                        <select class="form-select" id="selection">
+                            <option selected>Выберите вариант</option>
+                            <option value="1">Романтический</option>
+                            <option value="2">Праздничный</option>
+                            <option value="3">Траурный</option>
+                            <option value="4">Бизнес-букет</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                <button type="button" class="btn btn-primary">Отправить</button>
+            </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="core.js"></script>
 </html>

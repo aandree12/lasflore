@@ -754,3 +754,51 @@ body {
         font-size: 56px;
     }
 }
+
+/* Стили для модального окна */
+.modal-content {
+  border-radius: 15px;
+  border: none;
+}
+
+.modal-header {
+  border-bottom: 1px solid #e7e3e0;
+  background-color: #FFF2E1;
+  border-radius: 15px 15px 0 0;
+}
+
+.modal-title {
+  font-family: 'Playfair Display';
+  font-weight: 700;
+  color: #000;
+}
+
+.modal-body p {
+  font-family: 'Playfair Display';
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.form-control, .form-select {
+  border: 1px solid #e7e3e0;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #FFF2E1;
+  box-shadow: 0 0 0 0.2rem rgba(255, 242, 225, 0.5);
+}
+
+.btn-primary {
+  background-color: #FFF2E1;
+  border-color: #FFF2E1;
+  color: #000;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: #E7E3E0;
+  border-color: #E7E3E0;
+  color: #000;
+}
