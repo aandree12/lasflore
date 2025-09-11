@@ -32,14 +32,14 @@ $(document).ready(function() {
     }
   });
 });
-// Валидация формы в модальном окне
+// Валидация 
 document.addEventListener('DOMContentLoaded', function() {
   const submitButton = document.getElementById('submitForm');
   const emailInput = document.getElementById('email');
   const phoneInput = document.getElementById('phone');
   const selectionInput = document.getElementById('selection');
   
-  // Функция проверки email и телефона 
+  //роверкa email и телефона 
   function validateEmail(email) {
     return email.includes('@') && email.includes('.');
   }
@@ -50,18 +50,17 @@ document.addEventListener('DOMContentLoaded', function() {
     return digits.length >= 10 && digits.length <= 11;
   }
   
-  // Обработчик события для проверки формы
   submitButton.addEventListener('click', function(event) {
     event.preventDefault();
     let isValid = true;
     
-    // Очищаем предыдущие ошибки
+    // Очищаем ошибки
     document.getElementById('emailError').textContent = '';
     document.getElementById('phoneError').textContent = '';
     document.getElementById('selectionError').textContent = '';
     
     // Проверка 
-    
+
     if (!validateEmail(emailInput.value.trim())) {
       document.getElementById('emailError').textContent = 'Пожалуйста, введите корректный email';
       isValid = false;
@@ -75,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
       isValid = false;
     }
     
-    // Если форма валидна, можно отправить данные
+    // отправить данные
     if (isValid) {
       alert('Форма успешно отправлена! Мы свяжемся с вами в ближайшее время.');
       const modal = bootstrap.Modal.getInstance(document.getElementById('moreModal'));
