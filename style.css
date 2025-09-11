@@ -802,3 +802,11 @@ body {
   border-color: #E7E3E0;
   color: #000;
 }
+/* Стили для валидации */
+/* Стили для сообщений об ошибках */
+.error-message {
+  color: #dc3545;
+  font-size: 0.875em;
+  margin-top: 0.25rem;
+  min-height: 1.2em;
+}
