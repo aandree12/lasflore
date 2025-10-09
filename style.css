@@ -2,19 +2,63 @@
     box-sizing: border-box;
 }
 
+:root {
+  /* Светлая тема */
+  --bg-primary: #ffffff;
+  --bg-secondary: #FBFAFA;
+  --bg-accent: #FFF2E1;
+  --bg-hero: url('img/main-bg.png');
+  --text-primary: #000000;
+  --text-secondary: rgba(0, 0, 0, 0.9);
+  --card-bg: #FFFFFF;
+  --shadow-color: rgba(0, 0, 0, 0.25);
+  --button-bg: #E7E3E0;
+  --button-hover-bg: #000000;
+  --button-hover-color: #E7E3E0;
+  --border-color: #000000be;
+  --modal-bg: #ffffff;
+  --modal-header-bg: #FFF2E1;
+  --input-bg: #ffffff;
+  --input-border: #e7e3e0;
+  --contact-gradient: linear-gradient(180deg, rgba(231, 227, 224, 0) 0%, #E7E3E0 100%);
+}
+
+/* Темная тема */
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-accent: #3a3a3a;
+  --bg-hero: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/main-bg.png');
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.95);
+  --card-bg: #2d2d2d;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --button-bg: #4a4a4a;
+  --button-hover-bg: #ffffff;
+  --button-hover-color: #1a1a1a;
+  --border-color: rgba(255, 255, 255, 0.8);
+  --modal-bg: #2d2d2d;
+  --modal-header-bg: #3a3a3a;
+  --input-bg: #3a3a3a;
+  --input-border: #4a4a4a;
+  --contact-gradient: linear-gradient(180deg, rgba(42, 42, 42, 0) 0%, #2a2a2a 100%);
+}
+
 html,
 body {
     overflow-x: hidden;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.main {
+.hero {
     width: 100%;
     height: 95vh;
-    background: url(img/main-bg.png);
+    background: var(--bg-hero);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    
 }
 
 .navbar {
@@ -27,9 +71,10 @@ body {
     font-size: 35px;
     line-height: 47px;
     letter-spacing: 0.05em;
-    color: #000000;
+    color: var(--text-primary) !important;
     margin-left: 100px;
     margin-top: 10px;
+    transition: color 0.3s ease;
 }
 
 .navbar-nav {
@@ -50,14 +95,16 @@ body {
     font-size: 24px;
     line-height: 32px;
     letter-spacing: 0.05em;
-    color: rgba(0, 0, 0, 0.9) !important;
+    color: var(--text-secondary) !important;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-line {
     width: 68px;
     height: 1.5px;
-    background-color: #000000be;
+    background-color: var(--border-color);
     margin-right: 3px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .line-two {
@@ -72,16 +119,17 @@ body {
     font-size: 64px;
     line-height: 85px;
     letter-spacing: 0.05em;
-    color: #000000;
+    color: var(--text-primary);
     margin-left: 100px;
     margin-top: 230px;
+    transition: color 0.3s ease;
 }
 
 .buy-btn {
     width: 253px;
     height: 78px;
-    background: #E7E3E0;
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+    background: var(--button-bg);
+    box-shadow: 0px 6px 20px var(--shadow-color);
     border-radius: 100px;
     border: none;
     font-family: 'Playfair Display';
@@ -89,17 +137,17 @@ body {
     font-size: 24px;
     line-height: 32px;
     letter-spacing: 0.05em;
-    color: #000000;
+    color: var(--text-primary);
     margin-left: 100px;
     margin-top: 25px;
     padding-bottom: 5px;
-    transition-duration: 0.75s;
+    position: relative;
+    overflow: hidden;
 }
 
 .buy-btn:hover {
-    transition-duration: 0.75s;
-    background-color: #000;
-    color: #E7E3E0;
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-color);
 }
 
 @media (max-width: 1500px) {
@@ -124,19 +172,23 @@ body {
     }
 }
 
-
 .custom-toggler.navbar-toggler {
-    border-color: black;
-    border: 2px solid black !important;
+    border-color: var(--text-primary) !important;
+    border: 2px solid var(--text-primary) !important;
     margin-right: 70px;
-} 
+    transition: border-color 0.3s ease;
+}
 
 .custom-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+[data-theme="dark"] .custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 @media (max-width: 992px) {
-    .main {
+    .hero {
         height: 100vh;
     }
 
@@ -195,7 +247,6 @@ body {
     .main-text {
         font-size: 56px;
     }
-
 }
 
 @media (max-width: 334px) {
@@ -206,51 +257,48 @@ body {
     }
 }
 
-.main {
+.hero {
     -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    }
-    @-webkit-keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-    }
-    @keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-} 
+}
 
-.buy-btn {
-    -webkit-animation-name: zoomIn !important;
-    animation-name: zoomIn;
-    -webkit-animation-duration: 1.5s !important;
-    animation-duration: 1.5s;
-    -webkit-animation-fill-mode: both !important; 
-    animation-fill-mode: both;
-    }
-    @-webkit-keyframes zoomIn {
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+
+
+@-webkit-keyframes zoomIn {
     0% {
-    opacity: 0;
-    -webkit-transform: scale3d(.2, .2, .2);
-    transform: scale3d(.2, .2, .2);
+        opacity: 0;
+        -webkit-transform: scale3d(.2, .2, .2);
+        transform: scale3d(.2, .2, .2);
     }
     50% {
-    opacity: 1;
+        opacity: 1;
     }
-    }
-    @keyframes zoomIn {
+}
+
+@keyframes zoomIn {
     0% {
-    opacity: 0;
-    -webkit-transform: scale3d(.2, .2, .2);
-    transform: scale3d(.2, .2, .2);
+        opacity: 0;
+        -webkit-transform: scale3d(.2, .2, .2);
+        transform: scale3d(.2, .2, .2);
     }
     50% {
-    opacity: 1;
+        opacity: 1;
     }
-} 
+}
 
 .main-text {
     -webkit-animation-name: slideInLeft;
@@ -259,29 +307,31 @@ body {
     animation-duration: 1.5s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    }
-    @-webkit-keyframes slideInLeft {
+}
+
+@-webkit-keyframes slideInLeft {
     0% {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-    visibility: visible;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        visibility: visible;
     }
     100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
     }
-    }
-    @keyframes slideInLeft {
+}
+
+@keyframes slideInLeft {
     0% {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-    visibility: visible;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        visibility: visible;
     }
     100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
     }
-} 
+}
 
 .navbar {
     -webkit-animation-name: slideInDown;
@@ -290,34 +340,37 @@ body {
     animation-duration: 1.5s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    }
-    @-webkit-keyframes slideInDown {
+}
+
+@-webkit-keyframes slideInDown {
     0% {
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
-    visibility: visible;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        visibility: visible;
     }
     100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
-    }
-    @keyframes slideInDown {
+}
+
+@keyframes slideInDown {
     0% {
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
-    visibility: visible;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        visibility: visible;
     }
     100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
-} 
+}
 
 .our {
     width: 100%;
     height: 105vh;
-    background-color: #FFF2E1;
+    background-color: var(--bg-accent);
+    transition: background-color 0.3s ease;
 }
 
 .our-text {
@@ -326,16 +379,18 @@ body {
     font-size: 64px;
     line-height: 85px;
     letter-spacing: 0.05em;
-    color: #000000;
+    color: var(--text-primary);
     padding-top: 174px;
     text-align: center;
+    transition: color 0.3s ease;
 }
 
 .our-line {
     width: 400px;
     height: 1px;
-    background-color: #000;
+    background-color: var(--border-color);
     margin-top: 25px;
+    transition: background-color 0.3s ease;
 }
 
 .bouqets {
@@ -352,9 +407,11 @@ body {
 .third-bouqet {
     width: 343px;
     height: 528px;
-    background: #FFFFFF;
+    background: var(--card-bg);
     border-radius: 14px;
-    filter: drop-shadow(0px 8px 25px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0px 8px 25px var(--shadow-color));
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .first-main-bouqet,
@@ -376,7 +433,8 @@ body {
     font-size: 32px;
     line-height: 43px;
     letter-spacing: 0.05em;
-    color: #000000;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
 }
 
 .price {
@@ -392,7 +450,8 @@ body {
     font-size: 15px;
     line-height: 20px;
     letter-spacing: 0.05em;
-    color: #000000;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
 }
 
 .cart {
@@ -402,6 +461,7 @@ body {
     border-radius: 0 !important;
     margin-left: 20px !important;
     cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .first-bouqet img,
@@ -459,7 +519,7 @@ body {
     .second-bouqet,
     .third-bouqet {
         width: 310px;
-        margin-right: 7px !important; 
+        margin-right: 7px !important;
     }
 }
 
@@ -468,25 +528,25 @@ body {
     .second-bouqet,
     .third-bouqet {
         margin-right: 0 !important;
-        margin-left: -1.5px !important; 
+        margin-left: -1.5px !important;
     }
 }
-
 
 @media (max-width: 320px) {
     .first-bouqet,
     .second-bouqet,
     .third-bouqet {
         margin-right: 0 !important;
-        margin-left: -3px !important; 
+        margin-left: -3px !important;
     }
 }
 
 .about {
     width: 100%;
     height: 110vh;
-    background-color: #FBFAFA;
+    background-color: var(--bg-secondary);
     overflow: hidden !important;
+    transition: background-color 0.3s ease;
 }
 
 .about-main-text {
@@ -495,16 +555,18 @@ body {
     font-size: 64px;
     line-height: 85px;
     letter-spacing: 0.05em;
-    color: #000000;
+    color: var(--text-primary);
     padding-top: 174px;
     text-align: center;
+    transition: color 0.3s ease;
 }
 
 .about-line {
     width: 170px;
     height: 1px;
-    background-color: #000;
+    background-color: var(--border-color);
     margin-top: 25px;
+    transition: background-color 0.3s ease;
 }
 
 .about-main {
@@ -526,16 +588,17 @@ body {
     font-size: 28px;
     line-height: 37px;
     letter-spacing: 0.05em;
-    color: #000000;
+    color: var(--text-primary);
     text-align: left;
     margin-top: 180px;
+    transition: color 0.3s ease;
 }
 
 .more-btn {
     width: 272px;
     height: 78px;
-    background: #FFF2E1;
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+    background: var(--button-bg);
+    box-shadow: 0px 6px 20px var(--shadow-color);
     border-radius: 100px;
     border: none;
     margin-top: 35px;
@@ -544,15 +607,16 @@ body {
     font-size: 24px;
     line-height: 32px;
     letter-spacing: 0.05em;
-    color: #000000;
+    color: var(--text-primary);
     padding-bottom: 5px;
-    transition-duration: 0.75s;
+    transition: all 0.75s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .more-btn:hover {
-    transition-duration: 0.75s;
-    color: #FFF2E1;
-    background-color: #000;
+    color: var(--button-hover-color);
+    background-color: var(--button-hover-bg);
 }
 
 @media (max-width: 1600px) {
@@ -614,15 +678,17 @@ body {
 .contacts {
     width: 100%;
     height: 70vh;
-    background: linear-gradient(180deg, rgba(231, 227, 224, 0) 0%, #E7E3E0 100%);
+    background: var(--contact-gradient);
     margin-top: 600px;
+    transition: background 0.3s ease;
 }
 
 .point {
     width: 10px;
     height: 10px;
     border-radius: 100%;
-    background-color: #000;
+    background-color: var(--border-color);
+    transition: background-color 0.3s ease;
 }
 
 .contacts-main-text {
@@ -637,8 +703,9 @@ body {
     font-size: 64px;
     line-height: 85px;
     letter-spacing: 0.05em;
-    color: #000000;
+    color: var(--text-primary);
     height: 100px;
+    transition: color 0.3s ease;
 }
 
 .point {
@@ -650,8 +717,9 @@ body {
 .contacts-line {
     width: 238px;
     height: 1.25px;
-    background-color: #000000be;
+    background-color: var(--border-color);
     margin-right: 3px;
+    transition: background-color 0.3s ease;
 }
 
 .contacts-main {
@@ -670,7 +738,8 @@ body {
     font-size: 24px;
     line-height: 32px;
     letter-spacing: 0.05em;
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
 }
 
 .first-contact-info {
@@ -679,9 +748,9 @@ body {
     font-size: 24px;
     line-height: 32px;
     letter-spacing: 0.05em;
-    color: #000000;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
 }
-
 
 .second-contact-text {
     margin-top: 40px;
@@ -690,7 +759,8 @@ body {
     font-size: 24px;
     line-height: 32px;
     letter-spacing: 0.05em;
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
 }
 
 .second-contact-info {
@@ -699,7 +769,8 @@ body {
     font-size: 24px;
     line-height: 32px;
     letter-spacing: 0.05em;
-    color: #000000;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
 }
 
 .third-contact-text {
@@ -709,7 +780,8 @@ body {
     font-size: 24px;
     line-height: 32px;
     letter-spacing: 0.05em;
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
 }
 
 .third-contact-info {
@@ -718,7 +790,8 @@ body {
     font-size: 24px;
     line-height: 32px;
     letter-spacing: 0.05em;
-    color: #000000;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
 }
 
 @media (max-width: 955px) {
@@ -759,53 +832,403 @@ body {
 .modal-content {
   border-radius: 15px;
   border: none;
+  background-color: var(--modal-bg);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
 }
 
 .modal-header {
-  border-bottom: 1px solid #e7e3e0;
-  background-color: #FFF2E1;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--modal-header-bg);
   border-radius: 15px 15px 0 0;
+  transition: all 0.3s ease;
 }
 
 .modal-title {
   font-family: 'Playfair Display';
   font-weight: 700;
-  color: #000;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .modal-body p {
   font-family: 'Playfair Display';
   margin-bottom: 20px;
   line-height: 1.5;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .form-control, .form-select {
-  border: 1px solid #e7e3e0;
+  border: 1px solid var(--input-border);
   border-radius: 8px;
   padding: 10px;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
 }
 
 .form-control:focus, .form-select:focus {
-  border-color: #FFF2E1;
-  box-shadow: 0 0 0 0.2rem rgba(255, 242, 225, 0.5);
+  border-color: var(--button-bg);
+  box-shadow: 0 0 0 0.2rem rgba(231, 227, 224, 0.25);
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+}
+
+.form-control::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
 }
 
 .btn-primary {
-  background-color: #FFF2E1;
-  border-color: #FFF2E1;
-  color: #000;
+  background-color: var(--button-bg);
+  border-color: var(--button-bg);
+  color: var(--text-primary);
   font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #E7E3E0;
-  border-color: #E7E3E0;
-  color: #000;
+  background-color: var(--button-hover-bg);
+  border-color: var(--button-hover-bg);
+  color: var(--button-hover-color);
 }
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  transition: all 0.3s ease;
+}
+
 /* Стили для валидации */
 .error-message {
   color: #dc3545;
   font-size: 0.875em;
   margin-top: 0.25rem;
   min-height: 1.2em;
+}
+
+/* Стили для переключателя темы */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 8px 16px;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.line-theme {
+  width: 45px !important;
+  transition: transform 0.3s ease;
+}
+
+.first-bouqet:hover, .second-bouqet:hover, .third-bouqet:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+.cart:hover {
+  transform: scale(1.2);
+  filter: brightness(0.8);
+}
+
+.nav-link:hover {
+  transform: translateY(-2px);
+}
+
+.nav-line {
+  transform: scaleX(0);
+}
+
+.nav-item:hover .nav-line {
+  transform: scaleX(1);
+}
+
+/* Ripple эффект */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Пульсация для кнопки покупки */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(231, 227, 224, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(231, 227, 224, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(231, 227, 224, 0);
+  }
+}
+
+.buy-btn {
+  animation: pulse 2s infinite;
+}
+
+.buy-btn:hover {
+  animation: none;
+}
+
+/* Стили для валидации форм */
+.form-control.has-value, .form-select.has-value {
+  border-color: #28a745;
+}
+
+.form-control.invalid, .form-select.invalid {
+  border-color: #dc3545;
+}
+
+.form-control.valid, .form-select.valid {
+  border-color: #28a745;
+}
+
+.mb-3.focused label {
+  color: var(--button-bg);
+  transform: translateY(-5px);
+  font-size: 0.8em;
+  transition: all 0.3s ease;
+}
+
+/* Адаптивность для темы */
+@media (max-width: 992px) {
+  .theme-toggle {
+    margin-top: 10px;
+    justify-content: center;
+  }
+}
+
+[data-theme="dark"] .first-bouqet,
+[data-theme="dark"] .second-bouqet,
+[data-theme="dark"] .third-bouqet {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-select:focus {
+  box-shadow: 0 0 0 0.2rem rgba(74, 74, 74, 0.25);
+}
+
+[data-theme="dark"] .modal-body {
+  background-color: var(--modal-bg);
+}
+
+[data-theme="dark"] .btn-close {
+  filter: invert(1);
+}
+/* Добавьте эти стили в конец файла style.css */
+
+/* Стили для кнопки информации о букете */
+.bouquet-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    background: transparent;
+    color: var(--text-primary);
+    font-family: 'Playfair Display';
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.info-btn:hover {
+    background: var(--button-bg);
+    transform: scale(1.1);
+}
+
+/* Стили для модального окна букета */
+.bouquet-modal-image {
+    border-radius: 15px;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.bouquet-title {
+    font-family: 'Playfair Display';
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.bouquet-price {
+    font-family: 'Playfair Display';
+    font-weight: 800;
+    font-size: 32px;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.bouquet-details,
+.bouquet-description,
+.bouquet-features,
+.bouquet-care {
+    margin-bottom: 20px;
+}
+
+.bouquet-details h5,
+.bouquet-description h5,
+.bouquet-features h5,
+.bouquet-care h5 {
+    font-family: 'Playfair Display';
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.bouquet-composition,
+.bouquet-features-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.bouquet-composition li,
+.bouquet-features-list li {
+    font-family: 'Playfair Display';
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.bouquet-composition li:before,
+.bouquet-features-list li:before {
+    content: "•";
+    color: var(--button-bg);
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.bouquet-description p,
+.bouquet-care p {
+    font-family: 'Playfair Display';
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.add-to-cart-modal {
+    background: var(--button-bg);
+    border-color: var(--button-bg);
+    color: var(--text-primary);
+    font-family: 'Playfair Display';
+    font-weight: 600;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart-modal:hover {
+    background: var(--button-hover-bg);
+    color: var(--button-hover-color);
+    transform: translateY(-2px);
+}
+
+/* Адаптивность для модального окна букета */
+@media (max-width: 768px) {
+    .bouquet-modal-image {
+        height: 300px;
+        margin-bottom: 20px;
+    }
+    
+    .bouquet-title {
+        font-size: 24px;
+    }
+    
+    .bouquet-price {
+        font-size: 28px;
+    }
+}
+
+/* Анимация появления модального окна */
+.modal-content {
+    animation: modalAppear 0.3s ease-out;
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Улучшенные стили для карточек букетов */
+.first-bouqet,
+.second-bouqet,
+.third-bouqet {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.first-bouqet:hover,
+.second-bouqet:hover,
+.third-bouqet:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+.first-bouqet:hover::before,
+.second-bouqet:hover::before,
+.third-bouqet:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    z-index: 1;
+}
+
+/* Стили для иконки корзины в модальном окне */
+.cart {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cart:hover {
+    transform: scale(1.2);
+    filter: brightness(0.8);
 }

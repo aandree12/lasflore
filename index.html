@@ -17,7 +17,7 @@
     <title>LasFlore</title>
 </head>
 <body>
-    <div class="main">
+    <div class="hero">
           <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar-id">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">LasFlore &nbsp; <img src="img/logo.png" alt=""></a>
@@ -38,6 +38,12 @@
                         <a class="nav-link" href="#contacts-anchor">Контакты</a>
                         <div class="nav-line line-three"></div>
                     </li>
+                    <li class="nav-item">
+                        <button class="nav-link theme-toggle" id="themeToggle">
+                            <span class="theme-icon">🌙</span>
+                        </button>
+                        <div class="nav-line line-theme"></div>
+                    </li>
                 </ul>
               </div>
             </div>
@@ -47,13 +53,13 @@
           <button class="buy-btn">Купить букет</button>
     </div>
 
-    <div class="our" id="our-anchor">
+    <selection class="bouquets" id="our-anchor">
         <p class="our-text">Наши букеты</p>
         <div class="our-line mx-auto"></div>
 
         <div class="bouqets mx-auto">
-            <div class="first-bouqet" data-aos="zoom-in" data-aos-duration="1000">
-                <img class="mx-auto d-block" src="img/first-bouqet.png" alt="">
+            <div class="first-bouqet" data-aos="zoom-in" data-aos-duration="1000" data-bouquet-id="1">
+                <img class="mx-auto d-block" src="img/first-bouqet.png" alt="Весенний букет">
                 <div class="first-main-bouqet">
                     <div class="first-bouqet-info">
                         <p class="first-bouqet-price">
@@ -64,12 +70,15 @@
                             для Ваших мам
                         </p>
                     </div>
-                    <img class="cart" src="img/cart.svg" alt="">
+                    <div class="bouquet-actions">
+                        <img class="cart" src="img/cart.svg" alt="Добавить в корзину">
+                        <button class="info-btn" data-bs-toggle="modal" data-bs-target="#bouquetModal" data-bouquet="1">i</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="second-bouqet" data-aos="zoom-in" data-aos-duration="1000">
-                <img src="img/second-bouqet.png" alt="" class="mx-auto d-block">
+            <div class="second-bouqet" data-aos="zoom-in" data-aos-duration="1000" data-bouquet-id="2">
+                <img src="img/second-bouqet.png" alt="Милый букет" class="mx-auto d-block">
                 <div class="second-main-bouqet">
                     <div class="second-bouqet-info">
                         <p class="second-bouqet-price">
@@ -80,12 +89,15 @@
                             для ваших подруг
                         </p>
                     </div>
-                    <img src="img/cart.svg" alt="" class="cart">
+                    <div class="bouquet-actions">
+                        <img src="img/cart.svg" alt="Добавить в корзину" class="cart">
+                        <button class="info-btn" data-bs-toggle="modal" data-bs-target="#bouquetModal" data-bouquet="2">i</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="third-bouqet" data-aos="zoom-in" data-aos-duration="1000">
-                <img src="img/third-bouqet.png" alt="" class="mx-auto d-block">
+            <div class="third-bouqet" data-aos="zoom-in" data-aos-duration="1000" data-bouquet-id="3">
+                <img src="img/third-bouqet.png" alt="Уютный букет" class="mx-auto d-block">
                 <div class="third-main-bouqet">
                     <div class="third-bouqet-info">
                         <p class="third-bouqet-price">
@@ -96,19 +108,22 @@
                             чтобы принести домой жене
                         </p>
                     </div>
-                    <img src="img/cart.svg" alt="" class="cart">
+                    <div class="bouquet-actions">
+                        <img src="img/cart.svg" alt="Добавить в корзину" class="cart">
+                        <button class="info-btn" data-bs-toggle="modal" data-bs-target="#bouquetModal" data-bouquet="3">i</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </selection>
 
-    <div class="about" id="about-anchor">
+    <section class="about" id="about-anchor">
         <p class="about-main-text">О нас</p>
         <div class="about-line mx-auto"></div>
 
         <div class="about-main" data-aos="fade-up" data-aos-duration="1000">
             <div class="about-img-class">
-                <img src="img/about.png" alt="" class="about-img">
+                <img src="img/about.png" alt="О нас" class="about-img">
             </div>
             <div class="about-info">
                 <p class="about-text">
@@ -120,9 +135,9 @@
                 <button class="more-btn d-block mx-auto" data-bs-toggle="modal" data-bs-target="#moreModal">Узнать больше</button>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="contacts" id="contacts-anchor">
+    <footer class="contacts" id="contacts-anchor">
         <div class="contacts-main-text">
             <span><div class="point"></div></span><p>Контакты</p><span><div class="point"></div></span>
         </div>
@@ -130,7 +145,7 @@
 
         <div class="contacts-main">
             <div class="first-contact">
-                <img class="d-block mx-auto" src="img/first-contact.png" alt="">
+                <img class="d-block mx-auto" src="img/first-contact.png" alt="Местоположение">
                 <p class="first-contact-text">Где мы находимся?</p>
                 <p class="first-contact-info">
                     м. Первомайская<br>
@@ -140,7 +155,7 @@
             </div>
 
             <div class="second-contact">
-                <img src="img/second-contact.png" alt="" class="d-block mx-auto">
+                <img src="img/second-contact.png" alt="Контакты" class="d-block mx-auto">
                 <p class="second-contact-text">Как с нами связаться?</p>
                 <p class="second-contact-info">
                     позвонитьпо<br>
@@ -149,7 +164,7 @@
             </div>
 
             <div class="third-contact">
-                <img src="img/third-contact.png" alt="" class="d-block mx-auto">
+                <img src="img/third-contact.png" alt="Время работы" class="d-block mx-auto">
                 <p class="third-contact-text">Когда мы работаем?</p>
                 <p class="third-contact-info">
                     Каждый день <br>
@@ -158,16 +173,56 @@
                 </p>
             </div>
         </div>
-    </div>
-    
-
+    </footer>
 
     <script>
         AOS.init();
     </script>
 
+    <!-- Модальное окно для подробной информации о букете -->
+    <div class="modal fade" id="bouquetModal" tabindex="-1" aria-labelledby="bouquetModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bouquetModalLabel">Подробности букета</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img id="bouquetModalImage" src="" alt="Букет" class="img-fluid bouquet-modal-image">
+                        </div>
+                        <div class="col-md-6">
+                            <h3 id="bouquetModalTitle" class="bouquet-title"></h3>
+                            <p id="bouquetModalPrice" class="bouquet-price"></p>
+                            <div class="bouquet-details">
+                                <h5>Состав букета:</h5>
+                                <ul id="bouquetModalComposition" class="bouquet-composition"></ul>
+                            </div>
+                            <div class="bouquet-description">
+                                <h5>Описание:</h5>
+                                <p id="bouquetModalDescription"></p>
+                            </div>
+                            <div class="bouquet-features">
+                                <h5>Особенности:</h5>
+                                <ul id="bouquetModalFeatures" class="bouquet-features-list"></ul>
+                            </div>
+                            <div class="bouquet-care">
+                                <h5>Уход за букетом:</h5>
+                                <p id="bouquetModalCare"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary add-to-cart-modal">Добавить в корзину</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- Модальное окно -->
+    <!-- Модальное окно "Узнать больше" -->
     <div class="modal fade" id="moreModal" tabindex="-1" aria-labelledby="moreModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
