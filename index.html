@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,7 +53,8 @@
           <button class="buy-btn">Купить букет</button>
     </div>
 
-    <selection class="bouquets" id="our-anchor">
+    <section class="bouquets" id="our-anchor">
+        <h2 class="visually-hidden">Наши букеты</h2>
         <p class="our-text">Наши букеты</p>
         <div class="our-line mx-auto"></div>
 
@@ -115,9 +116,10 @@
                 </div>
             </div>
         </div>
-    </selection>
+    </section>
 
     <section class="about" id="about-anchor">
+        <h2 class="visually-hidden">О нас</h2>
         <p class="about-main-text">О нас</p>
         <div class="about-line mx-auto"></div>
 
@@ -138,8 +140,9 @@
     </section>
 
     <footer class="contacts" id="contacts-anchor">
+        <h2 class="visually-hidden">Контакты</h2>
         <div class="contacts-main-text">
-            <span><div class="point"></div></span><p>Контакты</p><span><div class="point"></div></span>
+            <span class="point-wrapper"><div class="point"></div></span><p>Контакты</p><span class="point-wrapper"><div class="point"></div></span>
         </div>
         <div class="contacts-line mx-auto"></div>
 
@@ -175,10 +178,6 @@
         </div>
     </footer>
 
-    <script>
-        AOS.init();
-    </script>
-
     <!-- Модальное окно для подробной информации о букете -->
     <div class="modal fade" id="bouquetModal" tabindex="-1" aria-labelledby="bouquetModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -190,26 +189,33 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <img id="bouquetModalImage" src="" alt="Букет" class="img-fluid bouquet-modal-image">
+                            <img id="bouquetModalImage" src="img/first-bouqet.png" alt="Букет" class="img-fluid bouquet-modal-image">
                         </div>
                         <div class="col-md-6">
-                            <h3 id="bouquetModalTitle" class="bouquet-title"></h3>
-                            <p id="bouquetModalPrice" class="bouquet-price"></p>
+                            <h3 id="bouquetModalTitle" class="bouquet-title">Весенний букет</h3>
+                            <p id="bouquetModalPrice" class="bouquet-price">1269₽</p>
                             <div class="bouquet-details">
                                 <h5>Состав букета:</h5>
-                                <ul id="bouquetModalComposition" class="bouquet-composition"></ul>
+                                <ul id="bouquetModalComposition" class="bouquet-composition">
+                                    <li>Тюльпаны</li>
+                                    <li>Нарциссы</li>
+                                    <li>Гипсофила</li>
+                                </ul>
                             </div>
                             <div class="bouquet-description">
                                 <h5>Описание:</h5>
-                                <p id="bouquetModalDescription"></p>
+                                <p id="bouquetModalDescription">Свежий весенний букет, который подарит радость и тепло вашим близким.</p>
                             </div>
                             <div class="bouquet-features">
                                 <h5>Особенности:</h5>
-                                <ul id="bouquetModalFeatures" class="bouquet-features-list"></ul>
+                                <ul id="bouquetModalFeatures" class="bouquet-features-list">
+                                    <li>Сезонные цветы</li>
+                                    <li>Яркие цвета</li>
+                                </ul>
                             </div>
                             <div class="bouquet-care">
                                 <h5>Уход за букетом:</h5>
-                                <p id="bouquetModalCare"></p>
+                                <p id="bouquetModalCare">Меняйте воду каждые 2 дня и подрезайте стебли.</p>
                             </div>
                         </div>
                     </div>
@@ -266,6 +272,10 @@
             </div>
         </div>
     </div>
+
+    <script>
+        AOS.init();
+    </script>
+    <script src="core.js"></script>
 </body>
-<script src="core.js"></script>
 </html>

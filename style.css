@@ -1,6 +1,228 @@
 * {
     box-sizing: border-box;
 }
+/* Базовые стили */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: #fff;
+  color: #111;
+  overflow-x: hidden;
+}
+
+/* Навигация */
+.navbar {
+  background-color: #ffffffee;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.navbar-brand img {
+  height: 28px;
+}
+.nav-link {
+  font-size: 18px;
+  margin-left: 15px;
+  color: #222 !important;
+  transition: 0.3s;
+}
+.nav-link:hover {
+  color: #000 !important;
+}
+.theme-toggle {
+  background: none;
+  border: none;
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  background: url('img/main-bg.png') center/cover no-repeat;
+  text-align: center;
+  color: #000;
+}
+.main-text {
+  font-size: 3rem;
+  font-weight: 800;
+}
+.buy-btn {
+  background: #e7e3e0;
+  border: none;
+  border-radius: 100px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+.buy-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Секция Букеты */
+.bouquets {
+  padding: 120px 20px 80px;
+  background-color: #fff2e1;
+}
+.our-text {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+.our-line {
+  width: 200px;
+  height: 2px;
+  background: #000;
+  margin: 0.5rem auto 3rem;
+}
+.bouqets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.bouqet-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  width: 340px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.bouqet-card:hover {
+  transform: translateY(-5px);
+}
+.bouqet-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.bouqet-info {
+  padding: 20px;
+  text-align: left;
+}
+.bouqet-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.bouqet-desc {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+.bouquet-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.cart {
+  width: 28px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.cart:hover {
+  transform: scale(1.2);
+}
+.info-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 700;
+}
+.info-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* О нас */
+.about {
+  padding: 100px 20px;
+  background: #fbfafa;
+}
+.about-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.about-img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+.about-info {
+  max-width: 500px;
+  text-align: center;
+}
+.more-btn {
+  background: #e7e3e0;
+  border: none;
+  border-radius: 100px;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  transition: 0.3s;
+}
+.more-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Контакты */
+.contacts {
+  background: linear-gradient(180deg, #e7e3e0 0%, #fff 100%);
+  padding: 100px 20px;
+}
+.contacts-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.contact {
+  max-width: 300px;
+}
+.contact img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 15px;
+}
+.contact p {
+  font-size: 1.1rem;
+}
+
+/* Модалки */
+.bouquet-modal-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* --- Адаптивность --- */
+@media (max-width: 992px) {
+  .main-text { font-size: 2.5rem; }
+  .bouqet-card { width: 80%; }
+  .about-main { flex-direction: column; }
+}
+@media (max-width: 768px) {
+  .navbar-brand { font-size: 22px; }
+  .main-text { font-size: 2rem; }
+  .buy-btn { font-size: 1rem; }
+  .bouqet-card { width: 95%; }
+}
+@media (max-width: 480px) {
+  .main-text { font-size: 1.7rem; }
+  .bouquets, .about, .contacts { padding: 80px 15px; }
+  .bouqet-card { width: 100%; }
+}
 
 :root {
   /* Светлая тема */
